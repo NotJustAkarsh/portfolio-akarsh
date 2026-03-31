@@ -29,7 +29,7 @@ const BentoSkills = ({ mousePos }) => (
         <h3 className="text-2xl font-bold mb-3 tracking-tight">Native Mobile</h3>
         <p className="text-zinc-500 dark:text-zinc-400 mb-6">High-fidelity iOS/Android apps with React Native.</p>
       </div>
-      <div className="w-full h-24 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-end p-4">
+      <div className="w-full h-24 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-end p-4">
         <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
           <div className="w-3/4 h-full bg-blue-500"></div>
         </div>
@@ -45,7 +45,7 @@ const BentoSkills = ({ mousePos }) => (
     </div>
 
     <div className="md:col-span-8 group p-10 rounded-[2.5rem] bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 flex items-center gap-12">
-      <div className="hidden lg:block w-40 h-40 relative flex-shrink-0">
+      <div className="hidden lg:block w-40 h-40 relative shrink-0">
          <Database className="absolute inset-0 m-auto text-blue-500/20" size={140} />
          <Database className="absolute inset-0 m-auto text-blue-500" size={60} />
       </div>

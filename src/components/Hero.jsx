@@ -35,7 +35,7 @@ const Hero = () => (
     id="home"
     className="relative min-h-[85vh] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
   >
-    <div className="order-2 lg:order-1">
+    <div className="order-1 lg:order-1">
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] font-black mb-8 tracking-[0.2em] uppercase">
         <Zap size={12} fill="currentColor" />
         Fullstack Developer
@@ -70,12 +70,12 @@ const Hero = () => (
       </div>
     </div>
 
-    <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end py-10 lg:py-0">
+    <div className="order-2 lg:order-2 relative flex justify-center lg:justify-end py-10 lg:py-0">
       <div className="relative w-72 h-96 md:w-[400px] md:h-[500px] animate-float">
         <div className="absolute inset-0 bg-blue-500/20 dark:bg-blue-500/10 blur-[100px] rounded-full scale-110"></div>
         <div className="relative w-full h-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[3rem] overflow-hidden group shadow-2xl">
           <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-zinc-200/50 to-transparent dark:from-zinc-800/50 dark:to-transparent">
-            <img src="Akarsh.jpg" alt="akarsh-dev" />
+            <img src="Akarsh.jpg" alt="akarsh-dev" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
           <div className="absolute bottom-8 left-8 right-8 p-6 rounded-3xl bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5 shadow-xl">
             <div className="text-xs font-black uppercase tracking-widest text-blue-500 mb-1">
