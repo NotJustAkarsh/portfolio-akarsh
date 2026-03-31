@@ -60,17 +60,17 @@ export const SKILLS_DATA = [
 
 export const PROJECTS = [
   {
-    title: "Nova CRM System",
+    title: "Veudemy LMS App",
     category: "Web",
-    description: "AI-powered customer relation management with predictive analytics.",
-    tech: ["React", "Go", "TensorFlow"],
+    description: "LMS Fullstack Application",
+    tech: ["React","Tailwind"],
     link: "#"
   },
   {
-    title: "Pulse Fitness App",
-    category: "App",
-    description: "Biometric tracking mobile app with real-time sync for wearable devices.",
-    tech: ["SwiftUI", "Firebase", "HealthKit"],
+    title: "Code Flex App",
+    category: "Web",
+    description: "Modern Ui Design website",
+    tech: ["React","Tailwind"],
     link: "#"
   },
   {
