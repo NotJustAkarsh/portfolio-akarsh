@@ -1,5 +1,5 @@
-import React from 'react';
-import { Layout, Server, Cloud } from 'lucide-react';
+import React from "react";
+import { Layout, Server, Cloud } from "lucide-react";
 
 export const MARQUEE_STACK = [
   { name: "React", slug: "react" },
@@ -13,7 +13,7 @@ export const MARQUEE_STACK = [
   { name: "Python", slug: "py" },
   { name: "GraphQL", slug: "graphql" },
   { name: "Redis", slug: "redis" },
-  { name: "Figma", slug: "figma" }
+  { name: "Figma", slug: "figma" },
 ];
 
 export const SKILLS_DATA = [
@@ -27,8 +27,8 @@ export const SKILLS_DATA = [
       { name: "TypeScript", slug: "ts" },
       { name: "Tailwind", slug: "tailwind" },
       { name: "Three.js", slug: "threejs" },
-      { name: "Redux", slug: "redux" }
-    ]
+      { name: "Redux", slug: "redux" },
+    ],
   },
   {
     title: "Backend Systems",
@@ -40,8 +40,8 @@ export const SKILLS_DATA = [
       { name: "Postgres", slug: "postgres" },
       { name: "Redis", slug: "redis" },
       { name: "GraphQL", slug: "graphql" },
-      { name: "Prisma", slug: "prisma" }
-    ]
+      { name: "Prisma", slug: "prisma" },
+    ],
   },
   {
     title: "DevOps & Design",
@@ -53,9 +53,9 @@ export const SKILLS_DATA = [
       { name: "Vercel", slug: "vercel" },
       { name: "GitHub", slug: "github" },
       { name: "Figma", slug: "figma" },
-      { name: "Kubernetes", slug: "kubernetes" }
-    ]
-  }
+      { name: "Kubernetes", slug: "kubernetes" },
+    ],
+  },
 ];
 
 export const PROJECTS = [
@@ -63,30 +63,32 @@ export const PROJECTS = [
     title: "Veudemy LMS App",
     category: "Web",
     description: "LMS Fullstack Application",
-    tech: ["React","Tailwind"],
+    tech: ["React", "Tailwind"],
     livelink: "https://veu-demy.vercel.app",
-    repolink:"https://github.com/NotJustAkarsh/VeuDemy"
+    repolink: "https://github.com/NotJustAkarsh/VeuDemy",
   },
   {
     title: "Code Flex App",
     category: "Web",
     description: "Modern Ui Design website",
-    tech: ["React","Tailwind"],
-    livelink: "https://code-flex.vercel.app",
-    repolink: "https://github.com/NotJustAkarsh/CodeFlexUI"
+    tech: ["React", "Tailwind"],
+    livelink: "https://code-flex-ui.vercel.app",
+    repolink: "https://github.com/NotJustAkarsh/CodeFlexUI",
   },
   {
     title: "Nebula API Gateway",
     category: "Fullstack",
-    description: "High-throughput microservices orchestrator for cloud-native apps.",
+    description:
+      "High-throughput microservices orchestrator for cloud-native apps.",
     tech: ["Node.js", "Kubernetes", "gRPC"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Ether Wallet",
     category: "Fullstack",
-    description: "Secure cryptocurrency wallet with multi-chain support and biometric auth.",
+    description:
+      "Secure cryptocurrency wallet with multi-chain support and biometric auth.",
     tech: ["React Native", "Web3.js", "Solidity"],
-    link: "#"
-  }
+    link: "#",
+  },
 ];
