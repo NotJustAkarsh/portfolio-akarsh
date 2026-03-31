@@ -64,14 +64,16 @@ export const PROJECTS = [
     category: "Web",
     description: "LMS Fullstack Application",
     tech: ["React","Tailwind"],
-    link: "#"
+    livelink: "https://veu-demy.vercel.app",
+    repolink:"https://github.com/NotJustAkarsh/VeuDemy"
   },
   {
     title: "Code Flex App",
     category: "Web",
     description: "Modern Ui Design website",
     tech: ["React","Tailwind"],
-    link: "#"
+    livelink: "https://code-flex.vercel.app",
+    repolink: "https://github.com/NotJustAkarsh/CodeFlexUI"
   },
   {
     title: "Nebula API Gateway",
