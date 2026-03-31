@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 60s linear infinite;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 350px at var(--x) var(--y), rgba(59, 130, 246, 0.12), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
