@@ -15,7 +15,7 @@ const Contact = () => (
          href="mailto:hello@dev.com" 
          className="inline-flex items-center gap-4 text-3xl md:text-5xl font-black tracking-tighter hover:text-blue-500 transition-all border-b-4 border-blue-500 pb-2 hover:gap-8"
        >
-         hello@yourname.dev <ChevronRight size={48} />
+         notjustakarsh@gmail.com <ChevronRight size={48} />
        </a>
     </div>
   </section>

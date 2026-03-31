@@ -8,7 +8,7 @@ const Footer = () => (
         <div className="w-10 h-10 bg-black dark:bg-white rounded-2xl flex items-center justify-center">
           <Terminal className="text-white dark:text-black" size={20} />
         </div>
-        PORTFOLIO.OS
+        AKARSH.IO
       </div>
       <div className="text-zinc-400 text-[10px] font-black uppercase tracking-[0.4em]">
         © 2026 Crafted for Excellence
