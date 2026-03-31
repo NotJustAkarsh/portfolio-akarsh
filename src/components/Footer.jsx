@@ -1,5 +1,5 @@
-import React from 'react';
-import { Terminal } from 'lucide-react';
+import React from "react";
+import { Terminal } from "lucide-react";
 
 const Footer = () => (
   <footer className="py-20 px-6 border-t border-zinc-100 dark:border-zinc-900">
@@ -14,9 +14,25 @@ const Footer = () => (
         © 2026 Crafted for Excellence
       </div>
       <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest">
-        <a href="#" className="hover:text-blue-500 transition-colors">Twitter</a>
-        <a href="#" className="hover:text-blue-500 transition-colors">Dribbble</a>
-        <a href="#" className="hover:text-blue-500 transition-colors">GitHub</a>
+        <a
+          href="https://x.com/ak_ar_sh_"
+          className="hover:text-blue-500 transition-colors"
+        >
+          Twitter
+        </a>
+        <a
+          href="https://linkedin.com/in/akarsh-singh-5968071b2"
+          className="hover:text-blue-500 transition-colors"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/NotJustAkarsh"
+          target="_blank"
+          className="hover:text-blue-500 transition-colors"
+        >
+          GitHub
+        </a>
       </div>
     </div>
   </footer>

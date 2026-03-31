@@ -39,8 +39,8 @@ const BentoSkills = ({ mousePos }) => (
     <div className="md:col-span-4 p-8 rounded-[2.5rem] bg-blue-600 flex flex-col justify-between text-white shadow-xl shadow-blue-500/20">
       <Zap size={32} fill="white" />
       <div>
-        <div className="text-5xl font-black mb-1 tracking-tighter">05+</div>
-        <div className="text-xs uppercase tracking-widest font-black opacity-70">Years Experience</div>
+        <div className="text-5xl font-black mb-1 tracking-tighter">01</div>
+        <div className="text-xs uppercase tracking-widest font-black opacity-70">Year Hands-On Experience</div>
       </div>
     </div>
 

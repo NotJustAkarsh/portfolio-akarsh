@@ -3,7 +3,6 @@ import {
   Zap,
   ChevronRight,
   Download,
-  User,
   Code2,
 } from "lucide-react";
 
@@ -64,8 +63,8 @@ const Hero = () => (
           <Download size={18} className="text-blue-500" /> Resume
         </a>
         <div className="flex gap-4 ml-0 sm:ml-4 mt-4 sm:mt-0">
-          <SocialIcon icon={<Github size={20} />} href="#" />
-          <SocialIcon icon={<Linkedin size={20} />} href="#" />
+          <SocialIcon icon={<Github size={20} />} href="https://github.com/NotJustAkarsh" />
+          <SocialIcon icon={<Linkedin size={20} />} href="https://linkedin.com/in/akarsh-singh-5968071b2" />
         </div>
       </div>
     </div>
@@ -75,7 +74,7 @@ const Hero = () => (
         <div className="absolute inset-0 bg-blue-500/20 dark:bg-blue-500/10 blur-[100px] rounded-full scale-110"></div>
         <div className="relative w-full h-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[3rem] overflow-hidden group shadow-2xl">
           <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-zinc-200/50 to-transparent dark:from-zinc-800/50 dark:to-transparent">
-            <img src="Akarsh.jpg" alt="akarsh-dev" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="https://ik.imagekit.io/gwv0quzrfq/Akarsh.jpg" alt="akarsh-dev" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
           <div className="absolute bottom-8 left-8 right-8 p-6 rounded-3xl bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5 shadow-xl">
             <div className="text-xs font-black uppercase tracking-widest text-blue-500 mb-1">
