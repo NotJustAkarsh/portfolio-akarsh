@@ -194,10 +194,9 @@ export default async function handler(req, res) {
       return res.status(400).json({ success: false, message: msg });
     }
 
-    // Temporary: expose real error for diagnosis — remove after fixing
     return res.status(500).json({
       success: false,
-      message: `Server error: ${err.message}`,
+      message: 'Something went wrong. Please try again or email me directly.',
     });
   }
 }
