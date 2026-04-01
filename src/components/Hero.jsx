@@ -67,7 +67,9 @@ const Hero = () => (
         modular, scalable architectures.
       </p>
       <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-        <button className="h-16 px-10 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-blue-500/20 flex items-center gap-2">
+        <button 
+          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          className="h-16 px-10 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-blue-500/20 flex items-center gap-2">
           Let's Talk <ChevronRight size={18} />
         </button>
         <a

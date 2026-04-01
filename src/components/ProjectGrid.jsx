@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { ExternalLink, Code2 } from "lucide-react";
 import { PROJECTS } from "../constants/data";
 
@@ -19,6 +19,8 @@ const Github = ({ size = 24, ...props }) => (
 );
 
 const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
+  const [activeProject, setActiveProject] = useState(null);
+
   const filtered = useMemo(
     () =>
       activeFilter === "All"
@@ -54,13 +56,25 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {filtered.map((p, i) => (
           <div key={i} className="group relative">
-            <div className="aspect-4/3 rounded-[3rem] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 overflow-hidden mb-6 relative shadow-sm">
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-wrap gap-3 items-end p-10 z-10">
+            <div 
+              className="aspect-4/3 rounded-[3rem] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 overflow-hidden mb-6 relative shadow-sm cursor-pointer lg:cursor-default"
+              onClick={() => setActiveProject(activeProject === i ? null : i)}
+            >
+              <div 
+                className={`absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent flex flex-wrap gap-3 items-end p-10 z-10 transition-opacity duration-500 ${
+                  activeProject === i 
+                    ? "opacity-100 pointer-events-auto" 
+                    : "opacity-0 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto"
+                }`}
+              >
                 <a
                   href={p.repolink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[10px] xl:text-xs flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl"
+                  onClick={(e) => e.stopPropagation()}
+                  className={`px-6 py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[10px] xl:text-xs flex items-center gap-2 transform hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl ${
+                    activeProject === i ? "translate-y-0" : "translate-y-4 lg:group-hover:translate-y-0"
+                  }`}
                 >
                   <Github size={14} /> GitHub
                 </a>
@@ -68,7 +82,10 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
                   href={p.livelink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[10px] xl:text-xs flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl"
+                  onClick={(e) => e.stopPropagation()}
+                  className={`px-6 py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[10px] xl:text-xs flex items-center gap-2 transform hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl ${
+                    activeProject === i ? "translate-y-0" : "translate-y-4 lg:group-hover:translate-y-0"
+                  }`}
                 >
                   Live Site <ExternalLink size={14} />
                 </a>

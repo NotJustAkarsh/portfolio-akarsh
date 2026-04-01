@@ -66,6 +66,7 @@ export const PROJECTS = [
     tech: ["React", "Tailwind"],
     livelink: "https://veu-demy.vercel.app",
     repolink: "https://github.com/NotJustAkarsh/VeuDemy",
+    thumbnail: "",
   },
   {
     title: "Code Flex App",
@@ -74,6 +75,7 @@ export const PROJECTS = [
     tech: ["React", "Tailwind"],
     livelink: "https://code-flex-ui.vercel.app",
     repolink: "https://github.com/NotJustAkarsh/CodeFlexUI",
+    thumbnail: "",
   },
   {
     title: "Nebula API Gateway",
@@ -81,7 +83,9 @@ export const PROJECTS = [
     description:
       "High-throughput microservices orchestrator for cloud-native apps.",
     tech: ["Node.js", "Kubernetes", "gRPC"],
-    link: "#",
+    livelink: "#",
+    repolink: "",
+    thumbnail: "",
   },
   {
     title: "Ether Wallet",
@@ -89,6 +93,8 @@ export const PROJECTS = [
     description:
       "Secure cryptocurrency wallet with multi-chain support and biometric auth.",
     tech: ["React Native", "Web3.js", "Solidity"],
-    link: "#",
+    livelink: "",
+    repolink: "",
+    thumbnail: "",
   },
 ];
