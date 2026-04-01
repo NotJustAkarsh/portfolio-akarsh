@@ -1,26 +1,21 @@
 import nodemailer from 'nodemailer';
-import path from 'path';
-import sharp from 'sharp';
 import { connectDB } from './_lib/db.js';
 import Contact from './_lib/Contact.js';
 
-// ─── Avatar: cached across warm invocations ───────────────────────────────────
-// Vercel bundles this file via vercel.json includeFiles
-const AVATAR_PATH = path.join(process.cwd(), 'public', 'Akarsh.jpg');
-let avatarBuffer = null;
-
-const getAvatar = async () => {
-  if (avatarBuffer) return avatarBuffer;
-  try {
-    avatarBuffer = await sharp(AVATAR_PATH)
-      .resize(120, 120, { fit: 'cover', position: 'top' })
-      .jpeg({ quality: 90 })
-      .toBuffer();
-  } catch {
-    avatarBuffer = null;
-  }
-  return avatarBuffer;
-};
+// ─── Body parser helper (Vercel doesn't auto-parse JSON) ─────────────────────
+const parseBody = (req) =>
+  new Promise((resolve, reject) => {
+    let data = '';
+    req.on('data', (chunk) => (data += chunk));
+    req.on('end', () => {
+      try {
+        resolve(data ? JSON.parse(data) : {});
+      } catch {
+        resolve({});
+      }
+    });
+    req.on('error', reject);
+  });
 
 // ─── Nodemailer transporter ───────────────────────────────────────────────────
 const createTransporter = () =>
@@ -73,13 +68,10 @@ const ownerEmail = ({ name, email, message }) => ({
   `,
 });
 
-const confirmationEmail = ({ name, email, message, avatar }) => ({
+const confirmationEmail = ({ name, email, message }) => ({
   from: `"Akarsh — Portfolio" <${process.env.EMAIL_USER}>`,
   to: email,
   subject: `Thank You for Reaching Out, ${name} — Akarsh`,
-  attachments: avatar
-    ? [{ filename: 'Akarsh.jpg', content: avatar, cid: 'akarsh_avatar' }]
-    : [],
   html: `
     <!DOCTYPE html>
     <html lang="en">
@@ -114,19 +106,16 @@ const confirmationEmail = ({ name, email, message, avatar }) => ({
             <p style="margin:0;color:#d4d4d8;font-size:14px;line-height:1.8;font-style:italic;">"${message.replace(/\n/g, '<br>')}"</p>
           </div>
 
-          <p style="margin:0 0 8px;color:#a1a1aa;font-size:15px;line-height:1.8;">
-            Once again, thank you for your message. I look forward to the opportunity of collaborating with you.
-          </p>
+          <p style="margin:0 0 8px;color:#a1a1aa;font-size:15px;line-height:1.8;">Once again, thank you for your message. I look forward to the opportunity of collaborating with you.</p>
           <p style="margin:0 0 36px;color:#a1a1aa;font-size:15px;line-height:1.8;">Warm regards,</p>
 
-          <!-- Signature -->
+          <!-- Signature (table layout for Outlook compat) -->
           <table cellpadding="0" cellspacing="0" style="background:#18181b;border:1px solid #27272a;border-radius:14px;margin-bottom:36px;width:100%;">
             <tr>
               <td style="padding:24px 20px 24px 24px;width:66px;vertical-align:middle;">
-                ${avatar
-                  ? `<img src="cid:akarsh_avatar" alt="Akarsh" width="60" height="60" style="width:60px;height:60px;border-radius:50%;border:3px solid #3b82f6;display:block;" />`
-                  : `<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#60a5fa);display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-size:22px;font-weight:900;">A</span></div>`
-                }
+                <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#60a5fa);text-align:center;line-height:60px;">
+                  <span style="color:#fff;font-size:24px;font-weight:900;line-height:60px;">A</span>
+                </div>
               </td>
               <td style="padding:24px 24px 24px 8px;vertical-align:middle;">
                 <p style="margin:0 0 2px;color:#fff;font-size:16px;font-weight:700;">Akarsh</p>
@@ -157,7 +146,7 @@ const confirmationEmail = ({ name, email, message, avatar }) => ({
 
 // ─── Vercel Serverless Handler ────────────────────────────────────────────────
 export default async function handler(req, res) {
-  // CORS preflight
+  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -167,7 +156,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
 
-  const { name, email, message } = req.body || {};
+  // Parse body — Vercel does NOT auto-parse JSON unlike Express
+  const body = await parseBody(req);
+  const { name, email, message } = body;
 
   if (!name || !email || !message) {
     return res.status(400).json({
@@ -177,20 +168,18 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 1. Connect to MongoDB (cached)
+    // 1. Connect to MongoDB (cached across warm invocations)
     await connectDB();
 
     // 2. Save to DB
     const contact = new Contact({ name, email, message });
     await contact.save();
 
-    // 3. Get avatar + send both emails in parallel
-    const avatar = await getAvatar();
+    // 3. Send both emails in parallel
     const transporter = createTransporter();
-
     await Promise.all([
       transporter.sendMail(ownerEmail({ name, email, message })),
-      transporter.sendMail(confirmationEmail({ name, email, message, avatar })),
+      transporter.sendMail(confirmationEmail({ name, email, message })),
     ]);
 
     return res.status(201).json({
@@ -198,7 +187,7 @@ export default async function handler(req, res) {
       message: 'Message sent successfully! I will get back to you soon.',
     });
   } catch (err) {
-    console.error('Contact handler error:', err);
+    console.error('[contact] Error:', err.message, err.stack);
 
     if (err.name === 'ValidationError') {
       const msg = Object.values(err.errors)[0].message;

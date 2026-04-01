@@ -1,8 +1,7 @@
 {
   "functions": {
     "api/contact.js": {
-      "maxDuration": 30,
-      "includeFiles": "public/Akarsh.jpg"
+      "maxDuration": 30
     }
   },
   "rewrites": [
