@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/contact.js": {
+      "maxDuration": 30,
+      "includeFiles": "public/Akarsh.jpg"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
