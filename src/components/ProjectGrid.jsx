@@ -53,15 +53,15 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-12">
         {filtered.map((p, i) => (
           <div key={i} className="group relative">
             <div 
-              className="aspect-4/3 rounded-[3rem] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 overflow-hidden mb-6 relative shadow-sm cursor-pointer lg:cursor-default"
+              className="aspect-4/3 rounded-3xl md:rounded-[3rem] bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 overflow-hidden mb-4 md:mb-6 relative shadow-sm cursor-pointer lg:cursor-default"
               onClick={() => setActiveProject(activeProject === i ? null : i)}
             >
               <div 
-                className={`absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent flex flex-wrap gap-3 items-end p-10 z-10 transition-opacity duration-500 ${
+                className={`absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-3 justify-end items-start md:items-end p-4 md:p-10 z-10 transition-opacity duration-500 ${
                   activeProject === i 
                     ? "opacity-100 pointer-events-auto" 
                     : "opacity-0 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto"
@@ -72,7 +72,7 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className={`px-6 py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[10px] xl:text-xs flex items-center gap-2 transform hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl ${
+                  className={`px-3 py-2 md:px-6 md:py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[8px] md:text-[10px] xl:text-xs flex items-center gap-1 md:gap-2 transform hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl ${
                     activeProject === i ? "translate-y-0" : "translate-y-4 lg:group-hover:translate-y-0"
                   }`}
                 >
@@ -83,7 +83,7 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className={`px-6 py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[10px] xl:text-xs flex items-center gap-2 transform hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl ${
+                  className={`px-3 py-2 md:px-6 md:py-4 bg-white text-black rounded-full font-black uppercase tracking-widest text-[8px] md:text-[10px] xl:text-xs flex items-center gap-1 md:gap-2 transform hover:scale-105 active:scale-95 transition-all duration-500 hover:shadow-xl ${
                     activeProject === i ? "translate-y-0" : "translate-y-4 lg:group-hover:translate-y-0"
                   }`}
                 >
@@ -97,13 +97,13 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
                 />
               </div>
             </div>
-            <h3 className="text-2xl font-bold mb-2 flex items-center gap-3">
+            <h3 className="text-base sm:text-lg md:text-2xl font-bold mb-1 md:mb-2 flex flex-col xl:flex-row xl:items-center gap-1 md:gap-3 items-start">
               {p.title}
-              <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-md border border-zinc-200 dark:border-zinc-800 text-zinc-500 font-black">
+              <span className="text-[8px] md:text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-md border border-zinc-200 dark:border-zinc-800 text-zinc-500 font-black">
                 {p.category}
               </span>
             </h3>
-            <p className="text-zinc-500 dark:text-zinc-400 line-clamp-2 leading-relaxed">
+            <p className="text-xs md:text-base text-zinc-500 dark:text-zinc-400 line-clamp-2 md:line-clamp-3 leading-relaxed">
               {p.description}
             </p>
           </div>

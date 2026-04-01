@@ -47,7 +47,7 @@ const App = () => {
       <div className="min-h-screen transition-colors duration-700 bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans selection:bg-blue-500/30 overflow-x-hidden">
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
         
-        <main className="max-w-7xl mx-auto px-6 pt-32 pb-20">
+        <main className="max-w-7xl mx-auto px-4 pt-24 pb-16">
           <Hero />
           <TechMarquee />
           <BentoSkills mousePos={mousePos} />
