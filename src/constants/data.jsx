@@ -62,7 +62,7 @@ export const PROJECTS = [
     tech: ["React", "Tailwind"],
     livelink: "https://veu-demy.vercel.app",
     repolink: "https://github.com/NotJustAkarsh/VeuDemy",
-    thumbnail: "",
+    thumbnail: "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/veu-demy.png",
   },
   {
     title: "Code Flex App",
@@ -71,26 +71,26 @@ export const PROJECTS = [
     tech: ["React", "Tailwind"],
     livelink: "https://code-flex-ui.vercel.app",
     repolink: "https://github.com/NotJustAkarsh/CodeFlexUI",
-    thumbnail: "",
+    thumbnail: "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/code-flex-ai.png",
   },
   {
-    title: "Nebula API Gateway",
-    category: "Fullstack",
+    title: "Simple Notes",
+    category: "Web",
     description:
-      "High-throughput microservices orchestrator for cloud-native apps.",
-    tech: ["Node.js", "Kubernetes", "gRPC"],
-    livelink: "#",
-    repolink: "",
-    thumbnail: "",
+      "Add your important notes and categorize them.",
+    tech: ["Node.js","React"],
+    livelink: "https://simple-notes-app-ai.vercel.app/",
+    repolink: "https://github.com/NotJustAkarsh/SimpleNotesAppAI",
+    thumbnail: "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/notes%20thumbnail.png",
   },
-  {
-    title: "Ether Wallet",
-    category: "Fullstack",
-    description:
-      "Secure cryptocurrency wallet with multi-chain support and biometric auth.",
-    tech: ["React Native", "Web3.js", "Solidity"],
-    livelink: "",
-    repolink: "",
-    thumbnail: "",
-  },
+  // {
+  //   title: "Ether Wallet",
+  //   category: "Fullstack",
+  //   description:
+  //     "Secure cryptocurrency wallet with multi-chain support and biometric auth.",
+  //   tech: ["React Native", "Web3.js", "Solidity"],
+  //   livelink: "",
+  //   repolink: "",
+  //   thumbnail: "",
+  // },
 ];

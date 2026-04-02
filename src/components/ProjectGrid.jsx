@@ -90,12 +90,21 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
                   Live Site <ExternalLink size={14} />
                 </a>
               </div>
-              <div className="w-full h-full flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform duration-700">
-                <Code2
-                  size={120}
-                  className="text-zinc-400 dark:text-zinc-700"
+              {p.thumbnail ? (
+                <img
+                  src={p.thumbnail}
+                  alt={p.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
-              </div>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center opacity-20 group-hover:scale-110 transition-transform duration-700">
+                  <Code2
+                    size={120}
+                    className="text-zinc-400 dark:text-zinc-700"
+                  />
+                </div>
+              )}
             </div>
             <h3 className="text-base sm:text-lg md:text-2xl font-bold mb-1 md:mb-2 flex flex-col xl:flex-row xl:items-center gap-1 md:gap-3 items-start">
               {p.title}
