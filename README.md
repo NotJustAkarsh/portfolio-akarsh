@@ -35,7 +35,6 @@ The project focuses on:
 
 ### Frontend
 - React.js – Component-based UI development  
-- Next.js – Server-side rendering & routing  
 - Tailwind CSS – Utility-first styling  
 
 ### Deployment
@@ -52,31 +51,55 @@ The project focuses on:
 
 ```
 portfolio-akarsh/
-│
-├── public/               # Static assets (images, icons, etc.)
-│
+├── api/
+│   ├── _lib/
+│   │   ├── Contact.js
+│   │   └── db.js
+│   └── contact.js
+├── public/
+│   ├── Akarsh.jpg
+│   ├── favicon.svg
+│   ├── icons.svg
+│   └── resume.pdf
+├── server/
+│   ├── models/
+│   │   └── Contact.js
+│   ├── routes/
+│   │   └── contact.js
+│   ├── .env.example
+│   ├── index.js
+│   ├── package-lock.json
+│   └── package.json
 ├── src/
-│   ├── components/      # Reusable UI components
-│   │   ├── Navbar.jsx
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   ├── components/
+│   │   ├── BentoSkills.jsx
+│   │   ├── Contact.jsx
 │   │   ├── Footer.jsx
-│   │   ├── ProjectCard.jsx
-│   │   └── ...
-│   │
-│   ├── pages/           # Application routes (Next.js pages)
-│   │   ├── index.js
-│   │   └── ...
-│   │
-│   ├── styles/          # Global styles & Tailwind config
-│   │
-│   ├── data/            # Static data (projects, content)
-│   │
-│   └── utils/           # Helper functions
-│
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ProjectGrid.jsx
+│   │   ├── TechIcon.jsx
+│   │   ├── TechMarquee.jsx
+│   │   └── TechSkills.jsx
+│   ├── constants/
+│   │   └── data.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 ├── .gitignore
+├── build-log.txt
+├── eslint.config.js
+├── index.html
+├── package-lock.json
 ├── package.json
-├── tailwind.config.js
-└── README.md
-```
+├── README.md
+├── vercel.json
+└── vite.config.js
+
 
 ---
 
@@ -146,6 +169,3 @@ If you like this project:
 
 ---
 
-## 📄 License
-
-This project is open-source and available under the MIT License.
