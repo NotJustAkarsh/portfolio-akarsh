@@ -62,7 +62,8 @@ export const PROJECTS = [
     tech: ["React", "Tailwind"],
     livelink: "https://veu-demy.vercel.app",
     repolink: "https://github.com/NotJustAkarsh/VeuDemy",
-    thumbnail: "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/veu-demy.png",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/veu-demy.png",
   },
   {
     title: "Code Flex App",
@@ -71,17 +72,28 @@ export const PROJECTS = [
     tech: ["React", "Tailwind"],
     livelink: "https://code-flex-ui.vercel.app",
     repolink: "https://github.com/NotJustAkarsh/CodeFlexUI",
-    thumbnail: "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/code-flex-ai.png",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/code-flex-ai.png",
   },
   {
     title: "Simple Notes",
     category: "Web",
-    description:
-      "Add your important notes and categorize them.",
-    tech: ["Node.js","React"],
+    description: "Add your important notes and categorize them.",
+    tech: ["Node.js", "React"],
     livelink: "https://simple-notes-app-ai.vercel.app/",
     repolink: "https://github.com/NotJustAkarsh/SimpleNotesAppAI",
-    thumbnail: "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/notes%20thumbnail.png",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/notes%20thumbnail.png",
+  },
+  {
+    title: "Bank Ledger",
+    category: "Web",
+    description: "Backend setup for bank transactions",
+    tech: ["Node.js", "Express", "MongoDB"],
+    livelink: "https://bank-ledger-7myy.onrender.com",
+    repolink: "https://github.com/NotJustAkarsh/bank-ledger",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/backend-ledger.jpg?updatedAt=1776265252870",
   },
   // {
   //   title: "Ether Wallet",
