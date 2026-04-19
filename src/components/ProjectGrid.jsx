@@ -40,7 +40,7 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
             Selected Work
           </h2>
         </div>
-        <div className="flex bg-zinc-100 dark:bg-zinc-900 p-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-inner">
+        <div className="flex flex-wrap justify-center gap-1 md:gap-0 bg-zinc-100 dark:bg-zinc-900 p-1.5 rounded-3xl md:rounded-full border border-zinc-200 dark:border-zinc-800 shadow-inner">
           {["All", "Web", "Backend", "App", "Fullstack"].map((f) => (
             <button
               key={f}
@@ -53,7 +53,7 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-12">
+      <div key={activeFilter} className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-12 animate-fade-in">
         {filtered.map((p, i) => (
           <div key={i} className="group relative">
             <div 
