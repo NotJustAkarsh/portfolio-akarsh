@@ -6,6 +6,7 @@ import TechMarquee from './components/TechMarquee';
 import BentoSkills from './components/BentoSkills';
 import TechSkills from './components/TechSkills';
 import ProjectGrid from './components/ProjectGrid';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -44,7 +45,7 @@ const App = () => {
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-      <div className="min-h-screen transition-colors duration-700 bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans selection:bg-blue-500/30 overflow-x-hidden">
+      <div className="min-h-screen transition-colors duration-700 bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans selection:bg-blue-500/30 overflow-x-clip">
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
         
         <main className="max-w-7xl mx-auto px-4 pt-24 pb-16">
@@ -53,6 +54,7 @@ const App = () => {
           <BentoSkills mousePos={mousePos} />
           <TechSkills />
           <ProjectGrid activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
+          <Certifications />
           <Contact />
         </main>
 

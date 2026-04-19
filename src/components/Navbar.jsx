@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Cpu as CpuIcon, Layers, Mail, Sun, Moon } from 'lucide-react';
+import { Home, Cpu as CpuIcon, Layers, Mail, Sun, Moon, Award } from 'lucide-react';
 
 const NavItem = ({ href, icon, label }) => (
   <a href={href} className="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-zinc-100 dark:hover:bg-white/5 transition-all text-zinc-600 dark:text-zinc-400 hover:text-blue-500 group">
@@ -14,6 +14,7 @@ const Navbar = ({ darkMode, toggleTheme }) => (
       <NavItem href="#home" icon={<Home size={18} />} label="Home" />
       <NavItem href="#skills" icon={<CpuIcon size={18} />} label="Skills" />
       <NavItem href="#work" icon={<Layers size={18} />} label="Work" />
+      <NavItem href="#certifications" icon={<Award size={18} />} label="Certs" />
       <NavItem href="#about" icon={<Mail size={18} />} label="Contact" />
       
       <div className="w-px h-6 bg-zinc-200 dark:bg-zinc-800 mx-2 hidden sm:block" />

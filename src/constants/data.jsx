@@ -95,14 +95,63 @@ export const PROJECTS = [
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/backend-ledger.jpg?updatedAt=1776265252870",
   },
-  // {
-  //   title: "Ether Wallet",
-  //   category: "Fullstack",
-  //   description:
-  //     "Secure cryptocurrency wallet with multi-chain support and biometric auth.",
-  //   tech: ["React Native", "Web3.js", "Solidity"],
-  //   livelink: "",
-  //   repolink: "",
   //   thumbnail: "",
   // },
+];
+
+export const CERTIFICATIONS = [
+  {
+    title: "BCG - Strategic & Experience Design",
+    issuer: "BCG X",
+    date: "2025",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/SKZxezskWgmFjRvj9/WkzSp3gqQriGfpM7H_SKZxezskWgmFjRvj9_z4DHhTkQBrD6TkmhM_1756379622224_completion_certificate.pdf",
+  },
+  {
+    title: "Accenture North America - Data Analytics and Visualization",
+    issuer: "Accenture North America",
+    date: "2025",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_z4DHhTkQBrD6TkmhM_1724570374771_completion_certificate.pdf",
+  },
+  {
+    title: "Deloitte Australia - Technology",
+    issuer: "Deloitte Australia",
+    date: "2026",
+    link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_z4DHhTkQBrD6TkmhM_1765377631760_completion_certificate.pdf",
+  },
+  {
+    title: "Skyscanner - Front-End Software Engineering",
+    issuer: "Skyscanner",
+    date: "2026",
+    link: "https://www.theforage.com/completion-certificates/skoQmxqhtgWmKv2pm/km4rw7dihDr3etqom_skoQmxqhtgWmKv2pm_z4DHhTkQBrD6TkmhM_1769008733169_completion_certificate.pdf",
+  },
+  {
+    title: "JavaScript",
+    issuer: "OneRoadmap",
+    date: "2026",
+    link: "https://www.oneroadmap.io/skills/js/certificate/CERT-695FD5B5",
+  },
+  {
+    title: "English Certificate",
+    issuer: "OneRoadmap",
+    date: "2026",
+    link: "https://www.oneroadmap.io/skills/english/certificate/CERT-FB8B2E9F",
+  },
+  {
+    title: "Commonwealth Bank - Introduction to Software Engineering",
+    issuer: "OneRoadmap",
+    date: "2026",
+    link: "https://www.theforage.com/completion-certificates/2sNmYuurxgpFYawco/wJMjCSKFhuj97x6F3_2sNmYuurxgpFYawco_z4DHhTkQBrD6TkmhM_1776322745582_completion_certificate.pdf",
+  },
+  {
+    title: "Claude 101",
+    issuer: "Anthropic",
+    date: "2026",
+    link: "https://verify.skilljar.com/c/t7n5n2rpkvfp",
+  },
+  {
+    title: "AI Fluency for Students",
+    issuer: "Anthropic",
+    date: "2026",
+    link: "https://verify.skilljar.com/c/w9cqupmaehtq",
+  },
 ];
