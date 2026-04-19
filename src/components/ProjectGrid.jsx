@@ -41,7 +41,7 @@ const ProjectGrid = ({ activeFilter, setActiveFilter }) => {
           </h2>
         </div>
         <div className="flex bg-zinc-100 dark:bg-zinc-900 p-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-inner">
-          {["All", "Web", "App", "Fullstack"].map((f) => (
+          {["All", "Web", "Backend", "App", "Fullstack"].map((f) => (
             <button
               key={f}
               onClick={() => setActiveFilter(f)}

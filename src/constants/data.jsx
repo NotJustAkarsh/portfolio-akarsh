@@ -87,7 +87,7 @@ export const PROJECTS = [
   },
   {
     title: "Bank Ledger",
-    category: "Web",
+    category: "Backend",
     description: "Backend setup for bank transactions",
     tech: ["Node.js", "Express", "MongoDB"],
     livelink: "https://bank-ledger-7myy.onrender.com",
@@ -95,8 +95,17 @@ export const PROJECTS = [
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/backend-ledger.jpg?updatedAt=1776265252870",
   },
-  //   thumbnail: "",
-  // },
+  {
+    title: "Advanced Authentication",
+    category: "Backend",
+    description: "An advanced authentication setup for a web app",
+    tech: ["Node.js", "Express", "MongoDB"],
+    livelink: "https://complete-authentication-71m0.onrender.com",
+    repolink: "https://github.com/NotJustAkarsh/complete-authentication",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/complete-authentication.jpg",
+  },
+
 ];
 
 export const CERTIFICATIONS = [
