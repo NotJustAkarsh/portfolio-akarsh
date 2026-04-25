@@ -64,6 +64,7 @@ export const PROJECTS = [
     repolink: "https://github.com/NotJustAkarsh/VeuDemy",
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/veu-demy.png",
+    isFeatured: true,
   },
   {
     title: "Code Flex App",
@@ -74,6 +75,7 @@ export const PROJECTS = [
     repolink: "https://github.com/NotJustAkarsh/CodeFlexUI",
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/code-flex-ai.png",
+    isFeatured: false,
   },
   {
     title: "Simple Notes",
@@ -84,6 +86,7 @@ export const PROJECTS = [
     repolink: "https://github.com/NotJustAkarsh/SimpleNotesAppAI",
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/notes%20thumbnail.png",
+    isFeatured: false,
   },
   {
     title: "Bank Ledger",
@@ -94,6 +97,7 @@ export const PROJECTS = [
     repolink: "https://github.com/NotJustAkarsh/bank-ledger",
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/backend-ledger.jpg?updatedAt=1776265252870",
+    isFeatured: true,
   },
   {
     title: "Advanced Authentication",
@@ -104,6 +108,7 @@ export const PROJECTS = [
     repolink: "https://github.com/NotJustAkarsh/complete-authentication",
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/complete-authentication.jpg",
+    isFeatured: false,
   },
 
 ];

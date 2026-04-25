@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import TechMarquee from './components/TechMarquee';
 import BentoSkills from './components/BentoSkills';
 import TechSkills from './components/TechSkills';
+import FeaturedProjects from './components/FeaturedProjects';
 import ProjectGrid from './components/ProjectGrid';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
@@ -53,6 +54,7 @@ const App = () => {
           <TechMarquee />
           <BentoSkills mousePos={mousePos} />
           <TechSkills />
+          <FeaturedProjects />
           <ProjectGrid activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
           <Certifications />
           <Contact />

@@ -56,3 +56,63 @@ html {
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
+
+/* ── Featured Projects scroll-reveal ── */
+@keyframes fp-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fp-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Base state — hidden before intersection */
+.fp-card {
+  opacity: 0;
+  transform: translateY(48px) scale(0.97);
+  will-change: opacity, transform;
+}
+
+/* Triggered by IntersectionObserver */
+.fp-card.fp-revealed {
+  animation: fp-slide-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms) forwards;
+}
+
+/* Shimmer effect on hover for featured badge */
+.fp-card-hero {
+  position: relative;
+}
+
+.fp-card-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    130deg,
+    transparent 40%,
+    rgba(59, 130, 246, 0.06) 60%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.fp-card-hero:hover::after {
+  opacity: 1;
+}
