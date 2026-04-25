@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ExternalLink, Star } from "lucide-react";
 import { PROJECTS } from "../constants/data";
 
@@ -47,6 +47,7 @@ function useReveal(threshold = 0.15) {
 const FeaturedCard = ({ project, index, layout }) => {
   const ref = useReveal(0.12);
   const isHero = layout === "hero"; // first card — full width
+  const [showOverlay, setShowOverlay] = useState(false);
 
   return (
     <div
@@ -58,9 +59,10 @@ const FeaturedCard = ({ project, index, layout }) => {
     >
       {/* Thumbnail */}
       <div
-        className={`relative overflow-hidden ${
+        className={`relative overflow-hidden cursor-pointer lg:cursor-default ${
           isHero ? "h-72 sm:h-96 md:h-[28rem]" : "h-48 sm:h-56 md:h-64"
         }`}
+        onClick={() => setShowOverlay(!showOverlay)}
       >
         {project.thumbnail ? (
           <img
@@ -76,12 +78,13 @@ const FeaturedCard = ({ project, index, layout }) => {
         )}
 
         {/* Gradient overlay with CTA buttons */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5 md:p-8 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="flex flex-wrap gap-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5 md:p-8 gap-3 transition-opacity duration-500 ${showOverlay ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
+          <div className={`flex flex-wrap gap-2 transition-transform duration-500 ${showOverlay ? "translate-y-0" : "translate-y-4 group-hover:translate-y-0"}`}>
             <a
               href={project.repolink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-transform shadow-lg"
             >
               <Github size={12} /> GitHub
@@ -90,6 +93,7 @@ const FeaturedCard = ({ project, index, layout }) => {
               href={project.livelink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-transform shadow-lg"
             >
               Live Site <ExternalLink size={12} />
