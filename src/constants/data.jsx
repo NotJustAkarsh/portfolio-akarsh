@@ -110,6 +110,17 @@ export const PROJECTS = [
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/complete-authentication.jpg",
     isFeatured: false,
   },
+  {
+    title: "ReviewAI",
+    category: "Fullstack",
+    description: "AI resume analyzer with job matching, skill gap detection, interview prep, and PDF report generation.",
+    tech: ["Node.js", "Express", "MongoDB","React","SCSS","GenAI","Puppeteer"],
+    livelink: "https://ai-resume-analyzer-henna-ten.vercel.app/",
+    repolink: "https://github.com/NotJustAkarsh/ai-resume-analyzer",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/Resume%20Analyzer.jpg?updatedAt=1777494217375",
+    isFeatured: true,
+  },
 
 ];
 
