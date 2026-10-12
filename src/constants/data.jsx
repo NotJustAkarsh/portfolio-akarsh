@@ -56,6 +56,17 @@ export const SKILLS_DATA = [
 
 export const PROJECTS = [
   {
+    title: "ZevyAI",
+    category: "Fullstack",
+    description: "Multi-Agent AI Chatbot with advanced features like memory, context awareness, and multi-agent collaboration.",
+    tech: ["React", "AWS","Generative AI","Node.js","RAG"],
+    livelink: "https://zevy-ai.vercel.app",
+    repolink: "https://github.com/NotJustAkarsh/ZevyAI",
+    thumbnail:
+      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/zevi-ai.png",
+    isFeatured: true,
+  },
+  {
     title: "Veudemy LMS App",
     category: "Web",
     description: "LMS Fullstack Application",
@@ -118,17 +129,6 @@ export const PROJECTS = [
     repolink: "https://github.com/NotJustAkarsh/ai-resume-analyzer",
     thumbnail:
       "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/Resume%20Analyzer.jpg?updatedAt=1777494217375",
-    isFeatured: true,
-  },
-  {
-    title: "ZevyAI",
-    category: "Fullstack",
-    description: "Multi-Agent AI Chatbot with advanced features like memory, context awareness, and multi-agent collaboration.",
-    tech: ["React", "AWS","Generative AI","Node.js","RAG"],
-    livelink: "https://zevy-ai.vercel.app",
-    repolink: "https://github.com/NotJustAkarsh/ZevyAI",
-    thumbnail:
-      "https://ik.imagekit.io/gwv0quzrfq/Portfolio%20Assets/zevi-ai.png",
     isFeatured: true,
   },
 
